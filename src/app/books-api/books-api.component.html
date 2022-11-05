@@ -1,18 +1,35 @@
 <div  class="w-full mt-10 text-center bg-white">
     <form (ngSubmit)="searchBook()">
         <h1 class="text-3xl m-5">App de recherche d'un livre via l'api booksAPI de google</h1>
-        <label class="text-2xl" for="isbn">Scannez un ISBN</label>
         <br>
-        <input (keydown.enter)="searchBook()" class="text-2xl border-black border" name="isbn" type="text" placeholder="Exemple : 1234567890" [(ngModel)]="isbn">
+        <label class="text-2xl m-2" for="isbn">Scannez un ISBN</label>
+        <br>
+        <input (keydown.enter)="searchBook()" class="text-2xl mt-2 border-black border" name="isbn" type="text" placeholder="Exemple : 1234567890" [(ngModel)]="isbn">
         <p *ngIf="empty" class="text-red-700">La case ne contient aucun isbn</p>
         <br>
-        <button class="bg-zinc-800 text-white p-2 border border-transparent hover:border-yellow-200 rounded-lg">Rechercher un livre</button>
+        <button class="bg-zinc-800 mt-2 text-white p-2 border border-transparent hover:border-yellow-200 rounded-lg">Rechercher un livre</button>
     </form>
     
+    <div *ngIf="!isbnValid">
+        <p>Attention isbn invalide</p>
+    </div>
+
     <div *ngIf="visible" class="w-full h-full">
-        <p>
-            Titre :
-            
+        <img class="m-auto mt-10" *ngIf="book.imageLinks" src="{{book.imageLinks.thumbnail}}" alt="">
+        <p class="text-center" *ngIf="!book.imageLinks">Pas d'image</p>
+        <p class="text-2xl">
+           {{book.title}}
         </p>
+        <p class="text-xl">
+            Description :
+        </p>
+        <br>
+        <p class="text-lg w-3/5 text-left m-auto">
+            {{book.description}}
+        </p>
+        <p>
+            Nombre de page : {{book.pageCount}}
+        </p>
+
     </div>
 </div>
