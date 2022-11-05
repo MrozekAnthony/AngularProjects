@@ -1,0 +1,18 @@
+<div  class="w-full mt-10 text-center bg-white">
+    <form (ngSubmit)="searchBook()">
+        <h1 class="text-3xl m-5">App de recherche d'un livre via l'api booksAPI de google</h1>
+        <label class="text-2xl" for="isbn">Scannez un ISBN</label>
+        <br>
+        <input (keydown.enter)="searchBook()" class="text-2xl border-black border" name="isbn" type="text" placeholder="Exemple : 1234567890" [(ngModel)]="isbn">
+        <p *ngIf="empty" class="text-red-700">La case ne contient aucun isbn</p>
+        <br>
+        <button class="bg-zinc-800 text-white p-2 border border-transparent hover:border-yellow-200 rounded-lg">Rechercher un livre</button>
+    </form>
+    
+    <div *ngIf="visible" class="w-full h-full">
+        <p>
+            Titre :
+            
+        </p>
+    </div>
+</div>

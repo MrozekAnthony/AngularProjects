@@ -1,0 +1,5 @@
+<nav class="w-screen h-20 shadow-lg shadow-white flex bg-zinc-800">
+    <span *ngFor="let link of linkList" class="w-20 h-10 m-5 text-center text-white rounded-lg border-transparent border-2 hover:border-white">
+        <a [routerLink]="link.url">{{link.title}}</a>
+    </span>
+</nav>
