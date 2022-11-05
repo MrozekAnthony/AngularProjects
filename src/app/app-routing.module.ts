@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BooksApiComponent } from './books-api/books-api.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,9 @@ const routes: Routes = [
   },
   {
     path: 'BooksApi', component: BooksApiComponent,
+  },
+  {
+    path: '**', component: NotFoundComponent,
   }
 ];
 
