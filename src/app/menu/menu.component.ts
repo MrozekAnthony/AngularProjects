@@ -23,7 +23,13 @@ export class MenuComponent implements OnInit {
       },
       {
         title: 'BooksApi', url: '/BooksApi'
+      },
+      {
+        title: 'Todo', url:'/Todo'
       }
+      // {
+      //   title: 'Tibi', url: '/Tibi'
+      // }
     ]
   }
 

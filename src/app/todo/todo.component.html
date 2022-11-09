@@ -1,0 +1,34 @@
+<div  class="w-full mt-10 text-center bg-white">
+    <h1 class="text-3xl m-5">Todo App</h1>
+    <h3>Entrez vos différentes tâches</h3>
+    <form>
+        <label class="text-2xl m-2" for="title">Titre</label>
+        <br>
+        <input class="text-2xl mt-2 border-black border" name="title" type="text" [(ngModel)]="newTodo.title">
+        <br>
+        <label class="text-2xl m-2" for="description">Description</label>
+        <br>
+        <input class="text-2xl mt-2 border-black border" name="description" type="text" [(ngModel)]="newTodo.description">
+        <br>
+        <div *ngIf="error">
+            <p class="text-xs text-red-600">Attention un des champs n'est pas rempli</p>
+        </div>
+
+        <br>
+        <button (click)="add()" class="bg-zinc-800 mt-2 text-white p-2 border border-transparent hover:border-yellow-200 rounded-lg">Ajouter une tâche</button>
+    </form>
+
+    <div class="w-full">
+        <h3 class="w-full">Liste des tâches</h3>
+        <br>
+        <div *ngFor="let tdo of this.todos" class="border border-black w-2/5 m-auto my-5 flex">
+            <div class="border border-black {{!tdo.deleted ? 'bg-zinc-800' : 'bg-green-700 blur-sm'}} text-white w-full">
+                <h1>{{tdo.title}}</h1>
+                <p>{{tdo.description}}</p>
+                <p>{{tdo.priority?.toString()}}</p>
+            </div>
+            <button *ngIf="!tdo.deleted" (click)="delete(tdo.id)" class="bg-red-700 text-white p-5">Delete</button>
+        </div>
+    </div>
+
+</div>

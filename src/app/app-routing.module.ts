@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { BooksApiComponent } from './books-api/books-api.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TibiComponent } from './tibi/tibi.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,12 @@ const routes: Routes = [
   {
     path: 'BooksApi', component: BooksApiComponent,
   },
+  {
+    path: 'Todo', component: TodoComponent,
+  },
+  // {
+  //   path: 'Tibi', component: TibiComponent,
+  // },
   {
     path: '**', component: NotFoundComponent,
   }

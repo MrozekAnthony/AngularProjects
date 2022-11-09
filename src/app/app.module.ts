@@ -8,6 +8,8 @@ import { MenuComponent } from './menu/menu.component';
 import { BooksApiComponent } from './books-api/books-api.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TibiComponent } from './tibi/tibi.component';
+import { TodoComponent } from './todo/todo.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MenuComponent,
     BooksApiComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TibiComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
